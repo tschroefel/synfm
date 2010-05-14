@@ -1,7 +1,7 @@
 <?php
 	/******************SynFM - yet another last.fm Framework*****************/
-	/* Filename: artist.class.php
-	/* Purpose: provides access to the artist capabilities
+	/* Filename: global.php
+	/* Purpose: Global config file
 	/* Created: 13.05.2010
 	/*************************************************************************
 	/* Bi-Licensed under GPLv2 and 
@@ -12,11 +12,12 @@
 	/* nightraven: http://www.lastfm.de/user/Nightr4ven
 	/************************************************************************/
 	
-	class artist {
-		protected $_synfm;
-		
-		function __construct($synfm) {
-			$this->_synfm = $synfm;
-		}
-	}
+	// Enable caching?
+	define('SYNFM_CACHING_ENABLED', '0');
+	
+	// 0 = MySQL (See docs/mysql-howto for further information); 1 = plaintext in cache/
+	define('SYNFM_CACHING_TYPE', '0');
+	
+	// lastfm api basic url (only neccessary to change if lastfm changes it's api url)
+	define('SYNFM_API_URL', 'http://ws.audioscrobbler.com/2.0/');
 ?>

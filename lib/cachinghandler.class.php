@@ -1,7 +1,7 @@
 <?php
 	/******************SynFM - yet another last.fm Framework*****************/
-	/* Filename: artist.class.php
-	/* Purpose: provides access to the artist capabilities
+	/* Filename: cachinghandler.class.php
+	/* Purpose: provides caching for lastfm api content if enabled
 	/* Created: 13.05.2010
 	/*************************************************************************
 	/* Bi-Licensed under GPLv2 and 
@@ -12,11 +12,7 @@
 	/* nightraven: http://www.lastfm.de/user/Nightr4ven
 	/************************************************************************/
 	
-	class artist {
-		protected $_synfm;
-		
-		function __construct($synfm) {
-			$this->_synfm = $synfm;
-		}
+	class cachinghandler {
+	
 	}
 ?>
