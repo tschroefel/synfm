@@ -13,10 +13,8 @@
 	/************************************************************************/
 	
 	class artist {
-		protected $_synfm;
-		
-		function __construct($synfm) {
-			$this->_synfm = $synfm;
+		function __construct() {
+			
 		}
 	}
 ?>

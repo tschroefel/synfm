@@ -13,12 +13,8 @@
 	/************************************************************************/
 	
 	class user {
-		protected $_synfm;
-		protected $_api_key;
-		protected $_user;
-		
-		function __construct($synfm) {
-			$this->_synfm = $synfm;
+		function __construct() {
+			
 		}
 	}
 ?>

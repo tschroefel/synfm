@@ -13,6 +13,6 @@
 	/************************************************************************/
 	
 	class cachinghandler {
-	
+		// Here will be the caching system at some time
 	}
 ?>

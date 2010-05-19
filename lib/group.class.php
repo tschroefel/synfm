@@ -12,11 +12,9 @@
 	/* nightraven: http://www.lastfm.de/user/Nightr4ven
 	/************************************************************************/
 	
-	class group {
-		protected $_synfm;
-		
-		function __construct($synfm) {
-			$this->_synfm = $synfm;
+	class group {		
+		function __construct() {
+			
 		}
 	}
 ?>
