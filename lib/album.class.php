@@ -31,32 +31,30 @@
 
 		function getBuylinks($artist = false, $album = false, $mbid = false, $country = false) {
 			$params = array();
-			$params['method'] = 'album.getbuylinks';
-			if($artist != false) { $params['artist'] = $artist; }
-			if($album != false) { $params['album']  = $album; }
-			if($mbid != false) { $params['mbid'] = $mbid; }
-			if($country != false) { $params['country'] = $country; }
-			$params['api_key'] = $this->_api_key;
+			parent::setArray('method', 'album.getbuylinks', $params);
+			parent::setArray('artist', $artist, $params);
+			parent::setArray('album', $album, $params);
+			parent::setArray('mbid', $mbid, $params);
+			parent::setArray('country', $country, $params);
+			parent::setArray('api_key', $this->_api_key, $params);			
+			$tmp = parent::api_request(parent::createQueryURL($params));
 			
-			$query_url = parent::createQueryURL($params);
-			
-			$tmp = parent::api_request($query_url);
 			return $tmp;
 		}
 
 		function getInfo($artist = false, $album = false, $mbid = false, $username = false, $lang = false) {
 			$params = array();
-			$params['method'] = 'album.getinfo';
-			if($artist != false) { $params['artist'] = $artist; }
-			if($album != false) { $params['album']  = $album; }
-			if($mbid != false) { $params['mbid'] = $mbid; }
-			if($this->_username != "") { $params['username'] = $this->_username; }
-			if($lang != false) { $params['lang'] = $lang; }
-			$params['api_key'] = $this->_api_key;
+			parent::setArray('method', 'album.getinfo', $params);
+			parent::setArray('artist', $artist, $params);
+			parent::setArray('album', $album, $params);
+			parent::setArray('mbid', $mbid, $params);
+			parent::setArray('username', $this->_username, $params);
+			parent::setArray('lang', $lang, $params);
+			parent::setArray('mbid', $mbid, $params);
+			parent::setArray('api_key', $this->_api_key, $params);		
 			
-			$query_url = parent::createQueryURL($params);
+			$tmp = parent::api_request(parent::createQueryURL($params));
 			
-			$tmp = parent::api_request($query_url);
 			return $tmp;
 		}
 
@@ -69,18 +67,14 @@
 		}
 		
 		function search($limit = false, $page = false, $album) {
-			if($album == "") { throw new Exception('Missing arguments'); }
-			
 			$params = array();
-			$params['method'] = 'album.search';
-			$params['album']  = $album;
-			if($limit != false) { $params['limit'] = $limit; }
-			if($page != false) { $params['page'] = $page; }
-			$params['api_key'] = $this->_api_key;
+			parent::setArray('method', 'album.search', $params);
+			parent::setArray('album', $album, $params);
+			parent::setArray('limit', $limit, $params);
+			parent::setArray('page', $page, $params);
+			parent::setArray('api_key', $this->_api_key, $params);
+			$tmp = parent::api_request(parent::createQueryURL($params));
 			
-			$query_url = parent::createQueryURL($params);
-			
-			$tmp = parent::api_request($query_url);
 			return $tmp;
 		}
 		

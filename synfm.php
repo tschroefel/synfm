@@ -24,7 +24,7 @@
 	class synfm extends api_handler {
 		protected $_api_data;
 		
-		public $_album, $_artist, $_auth, $_event, $_geo, $_group, $_library, $_playlist, $_radio, $_tag, $_tasteometer, $_track, $_user, $_venue;
+		public $album, $artist, $auth, $event, $geo, $group, $library, $playlist, $radio, $tag, $tasteometer, $track, $user, $venue;
 		
 		function __construct($api_key, $user = "", $password = "") {
 			$this->_api_data = array();
@@ -35,20 +35,20 @@
 			
 			
 			// Load the subclasses, little junky code but unfortunately neccessary
-			$this->_album 		= new album($this->_api_data);
-			$this->_artist 		= new artist($this->_api_data);
-			$this->_auth 		= new auth($this->_api_data);
-			$this->_event 		= new event($this->_api_data);
-			$this->_geo 		= new geo($this->_api_data);
-			$this->_group 		= new group($this->_api_data);
-			$this->_library		= new library($this->_api_data);
-			$this->_playlist	= new playlist($this->_api_data);
-			$this->_radio		= new radio($this->_api_data);
-			$this->_tag			= new tag($this->_api_data);
-			$this->_tasteometer	= new tasteometer($this->_api_data);
-			$this->_track		= new track($this->_api_data);
-			$this->_user		= new user($this->_api_data);
-			$this->_venue		= new venue($this->_api_data);
+			$this->album 		= new album($this->_api_data);
+			$this->artist 		= new artist($this->_api_data);
+			$this->auth 		= new auth($this->_api_data);
+			$this->event 		= new event($this->_api_data);
+			$this->geo 		= new geo($this->_api_data);
+			$this->group 		= new group($this->_api_data);
+			$this->library		= new library($this->_api_data);
+			$this->playlist	= new playlist($this->_api_data);
+			$this->radio		= new radio($this->_api_data);
+			$this->tag			= new tag($this->_api_data);
+			$this->tasteometer	= new tasteometer($this->_api_data);
+			$this->track		= new track($this->_api_data);
+			$this->user		= new user($this->_api_data);
+			$this->venue		= new venue($this->_api_data);
 		}
 	}
 ?>

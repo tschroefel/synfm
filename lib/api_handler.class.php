@@ -18,7 +18,7 @@ class api_handler {
 	private $_tmp;
 
 	// Return a query url for the api, basic url comes from the global config
-	function createQueryURL($params) {
+	public function createQueryURL($params) {
 		// First part is the basic url that is set in the global config and then combine it with the parameters
 		$fullurl  =	SYNFM_API_URL;
 		$fullurl .= '?'.http_build_query($params);
@@ -34,7 +34,7 @@ class api_handler {
 	}
 	
 	// get a specific element of the feed
-	function api_get_element($feed, $tree) {
+	public function api_get_element($feed, $tree) {
 		$this->request($feed);
 		$this->element = $this->_tmp;
 		foreach ($tree as $value) {
@@ -43,9 +43,17 @@ class api_handler {
 		return $this->element;
 	}
 	
-	function api_request($query_url) {
+	// Return the whole api result "as is"
+	public function api_request($query_url) {
 		$this->request($query_url);
 		return $this->_tmp;
+	}
+	
+	// Little helper method for generating the array that is used to query the api	
+	public function setArray($index, $value ,&$base) {
+		if($value != "" && $value != false) {
+			$base[$index] = $value;
+		}
 	}
 }
 ?>
