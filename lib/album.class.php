@@ -51,8 +51,7 @@
 			parent::setArray('username', $this->_username, $params);
 			parent::setArray('lang', $lang, $params);
 			parent::setArray('mbid', $mbid, $params);
-			parent::setArray('api_key', $this->_api_key, $params);		
-			
+			parent::setArray('api_key', $this->_api_key, $params);				
 			$tmp = parent::api_request(parent::createQueryURL($params));
 			
 			return $tmp;
