@@ -33,8 +33,7 @@
 			$params = array();
 			parent::setArray('method', 'artist.getevents', $params);
 			parent::setArray('artist', $artist, $params);
-                        parent::setArray('api_key', $this->_api_key, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params));
+			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
 			
 			return $tmp;
 		}
@@ -46,8 +45,7 @@
 			parent::setArray('page', $page, $params);
 			parent::setArray('limit', $limit, $params);
 			parent::setArray('order', $order, $params);
-                        parent::setArray('api_key', $this->_api_key, $params);
-                        $tmp = parent::api_request(parent::createQueryURL($params));
+                        $tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
                         
                         return $tmp;
 		}
@@ -59,9 +57,112 @@
 			parent::setArray('mbid', $mbid, $params);
 			parent::setArray('username', $username, $params);
 			parent::setArray('lang', $lang, $params);
-			parent::setArray('api_key', $this->_api_key, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params));
+			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
 			
 			return $tmp;
+		}	
+	
+		function getPastEvents($artist, $page = false, $limit = false) {
+			$params = array();
+			parent::setArray('method', 'artist.getpastevents', $params);
+			parent::setArray('artist' $artist, $params);
+			parent::setArray('page', $page, $params;
+			parent::setArray('limit', $limit, $params);
+			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			
+			return $tmp;
+		}
+		
+		function getPodcast($artist) {
+			$params = array();
+			parent::setArray('method', 'artist.getpodcast', $params);
+			parent::setArray('artist', $artist, $params);
+			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			
+			return $tmp;		
+		}
+		
+		function getShouts($artist, $limit = false, $page = false) {
+			$params = array();
+			parent::setArray('method', 'artist.getshouts', $params);
+			parent::setArray('artist', $artist, $params);
+			parent::setArray('limit', $limit, $params);
+			parent::setArray('page', $page, $params);
+			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			
+			return $tmp;
+		}
+		
+		function getSimilar($artist, $limit = false) {
+			$params = array();
+			parent::setArray('method', 'artist.getsimilar', $params);
+			parent::setArray('artist', $artist, $params);
+			parent::setArray('limit', $limit, $params);
+			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			
+			return $tmp;	
+		}
+		
+		function getTags($artist) {
+			throw new Exeption('Not yet implemented');
+		}
+		
+		function getTopAlbums($artist) {
+			$params = array();
+			parent::setArray('method', 'artist.gettopalbums', $params);
+			parent::setArray('artist', $artist, $params);
+			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			
+			return $tmp;
+		}
+
+                function getTopFans($artist) {
+                	$params = array();
+                	parent::setArray('method', 'artist.gettopfans', $params); 
+                	parent::setArray('artist', $artist, $params); $tmp = 
+                	$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+                        
+                        return $tmp;
+		}
+		
+		function getTopTags($artist) {
+			$params = array(); 
+			parent::setArray('method', 'artist.gettoptags', $params);
+			parent::setArray('artist', $artist, $params);
+			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			
+			return $tmp;
+		}
+		
+		function getTopTracks($artist) {
+			$params = array();
+			parent::setArray('method', 'artist.gettoptracks', $params);
+			parent::setArray('artist', $artist, $params);
+			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			
+			return $tmp;
+		}
+		
+		function removeTag($artist, $tag) {
+			throw new Exeption('Not yet implemented');
+		}
+		
+		function search($artist, $limit = false, $page = false) {
+			$params = array();
+			parent::setArray('method', 'artist.search', $params);
+			parent::setArray('limit', $limit, $params);
+			parent::setArray('page', $page, $params);
+			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_request);
+			
+			return $tmp;
+		}
+		
+		function share($artist, $recipient, $message = false, $pub = false) {
+			throw new Exeption('Not yet implemented');
+		}
+		
+		function shout($artist, $message) {
+			throw new Exeption('Not yet implemented');
+		}
 	}
 ?>

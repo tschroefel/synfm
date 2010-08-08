@@ -18,13 +18,16 @@ class api_handler {
 	private $_tmp;
 
 	// Return a query url for the api, basic url comes from the global config
-	public function createQueryURL($params) {
+	public function createQueryURL($params, $apikey) {
 		// First part is the basic url that is set in the global config and then combine it with the parameters
 		$fullurl  =	SYNFM_API_URL;
 		$fullurl .= '?'.http_build_query($params);
-		
+				
 		// Removing the nasty html entities ... as it happens last.fm doesn't like them
 		$fullurl = html_entity_decode($fullurl);
+		
+		// Add the api key so you don't have to do that in every method
+		$fullurl .= "&=".$apikey;
 		return $fullurl;
 	}
     
