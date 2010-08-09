@@ -33,7 +33,8 @@
 			$params = array();
 			parent::setArray('method', 'artist.getevents', $params);
 			parent::setArray('artist', $artist, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -45,7 +46,8 @@
 			parent::setArray('page', $page, $params);
 			parent::setArray('limit', $limit, $params);
 			parent::setArray('order', $order, $params);
-                        $tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+                        $url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
                         
                         return $tmp;
 		}
@@ -57,7 +59,8 @@
 			parent::setArray('mbid', $mbid, $params);
 			parent::setArray('username', $username, $params);
 			parent::setArray('lang', $lang, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}	
@@ -68,7 +71,8 @@
 			parent::setArray('artist' $artist, $params);
 			parent::setArray('page', $page, $params;
 			parent::setArray('limit', $limit, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -77,7 +81,8 @@
 			$params = array();
 			parent::setArray('method', 'artist.getpodcast', $params);
 			parent::setArray('artist', $artist, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;		
 		}
@@ -88,7 +93,8 @@
 			parent::setArray('artist', $artist, $params);
 			parent::setArray('limit', $limit, $params);
 			parent::setArray('page', $page, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -98,7 +104,8 @@
 			parent::setArray('method', 'artist.getsimilar', $params);
 			parent::setArray('artist', $artist, $params);
 			parent::setArray('limit', $limit, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;	
 		}
@@ -111,7 +118,8 @@
 			$params = array();
 			parent::setArray('method', 'artist.gettopalbums', $params);
 			parent::setArray('artist', $artist, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -120,7 +128,8 @@
                 	$params = array();
                 	parent::setArray('method', 'artist.gettopfans', $params); 
                 	parent::setArray('artist', $artist, $params); $tmp = 
-                	$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+                	$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
                         
                         return $tmp;
 		}
@@ -129,7 +138,8 @@
 			$params = array(); 
 			parent::setArray('method', 'artist.gettoptags', $params);
 			parent::setArray('artist', $artist, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -138,7 +148,8 @@
 			$params = array();
 			parent::setArray('method', 'artist.gettoptracks', $params);
 			parent::setArray('artist', $artist, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}

@@ -1,7 +1,7 @@
 <?php
 	/******************SynFM - yet another last.fm Framework*****************/
-	/* Filename: album.class.php
-	/* Purpose: provides access to the album capabilities
+	/* Filename: track.class.php
+	/* Purpose: provides access to the track capabilities
 	/* Created: 13.05.2010
 	/*************************************************************************
 	/* Bi-Licensed under GPLv2 and 
@@ -40,7 +40,8 @@
 			parent::setArray('track', $track, $params);
 			parent::setArray('mbid', $mbid, $params);
 			parent::setArray('country', $country, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -49,7 +50,8 @@
 			$params = array();
 			parent::setArray('method', 'track.getfingerprintmetadata', $params);
 			parent::setArray('fingerprintid', $fingerprintid, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -61,7 +63,8 @@
 			parent::setArray('track', $track, $params);
 			parent::setArray('mbid', $mbid, $params);
 			parent::setArray('username', $username, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -72,7 +75,8 @@
 			parent::setArray('track, $track, $params);
 			parent::setArray('artist', $artist, $params);
 			parent::setArray('mbid', $mbid, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -87,7 +91,8 @@
 			parent::setArray('track', $track, $params);
 			parent::setArray('artist', $artist, $params);
 			parent::setArray('mbid', $mbid, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -98,7 +103,8 @@
 			parent::setArray('track', $track, $params);
 			parent::setArray('artist', $artist, $params);
 			parent::setArray('mbid', $mbid, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -118,7 +124,8 @@
 			parent::setArray('artist, $artist, $params);
 			parent::setArray('limit', $limit, $params);
 			parent::setArray('page', $page, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}

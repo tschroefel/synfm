@@ -36,7 +36,8 @@
 			parent::setArray('album', $album, $params);
 			parent::setArray('mbid', $mbid, $params);
 			parent::setArray('country', $country, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -50,7 +51,8 @@
 			parent::setArray('username', $this->_username, $params);
 			parent::setArray('lang', $lang, $params);
 			parent::setArray('mbid', $mbid, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
@@ -69,7 +71,8 @@
 			parent::setArray('album', $album, $params);
 			parent::setArray('limit', $limit, $params);
 			parent::setArray('page', $page, $params);
-			$tmp = parent::api_request(parent::createQueryURL($params, $this->_api_key));
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
