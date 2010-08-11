@@ -14,7 +14,7 @@
 	
 	require_once 'api_handler.class.php';
 	
-	class album extends api_handler {
+	class user extends api_handler {
 		private $_api_key;
 		private $_username;
 		private $_password;

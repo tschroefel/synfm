@@ -14,7 +14,7 @@
 	
 	require_once 'api_handler.class.php';
 	
-	class album extends api_handler {
+	class track extends api_handler {
 		private $_api_key;
 		private $_username;
 		private $_password;
@@ -121,7 +121,7 @@
 			$params = array();
 			parent::setArray('method', 'track.search', $params);
 			parent::setArray('track', $track, $params);
-			parent::setArray('artist, $artist, $params);
+			parent::setArray('artist', $artist, $params);
 			parent::setArray('limit', $limit, $params);
 			parent::setArray('page', $page, $params);
 			$url = parent::createQueryURL($params, $this->_api_key);
