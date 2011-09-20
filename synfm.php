@@ -4,7 +4,7 @@
 	/* Purpose: Main class, loads the subclasses
 	/* Created: 08.05.2010
 	/*************************************************************************
-	/* Bi-Licensed under GPLv2 and 
+	/* Bi-Licensed under GPLv2 and
 	/* Musicware License (send the authors a CD if you like this framework)
 	/*************************************************************************
 	/* our last.fm profiles:
@@ -29,6 +29,7 @@
 		function __construct($api_key, $user = "", $password = "") {
 			$this->_api_data = array();
 			
+			// general purpose parameters
 			$this->_api_data['api_key'] = $api_key;
 			$this->_api_data['user'] = $user;
 			$this->_api_data['password'] = $password;
@@ -42,9 +43,9 @@
 			$this->geo 		= new geo($this->_api_data);
 			$this->group 		= new group($this->_api_data);
 			$this->library		= new library($this->_api_data);
-			$this->playlist	= new playlist($this->_api_data);
+			$this->playlist		= new playlist($this->_api_data);
 			$this->radio		= new radio($this->_api_data);
-			$this->tag			= new tag($this->_api_data);
+			$this->tag		= new tag($this->_api_data);
 			$this->tasteometer	= new tasteometer($this->_api_data);
 			$this->track		= new track($this->_api_data);
 			$this->user		= new user($this->_api_data);
