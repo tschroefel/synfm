@@ -46,10 +46,10 @@
 			parent::setArray('page', $page, $params);
 			parent::setArray('limit', $limit, $params);
 			parent::setArray('order', $order, $params);
-                        $url = parent::createQueryURL($params, $this->_api_key);
+			$url = parent::createQueryURL($params, $this->_api_key);
 			$tmp = parent::api_request($url);
-                        
-                        return $tmp;
+
+			return $tmp;
 		}
 		
 		function getInfo($artist = false, $mbid = false, $username = false, $lang = false) {
@@ -124,14 +124,14 @@
 			return $tmp;
 		}
 
-                function getTopFans($artist) {
-                	$params = array();
-                	parent::setArray('method', 'artist.gettopfans', $params); 
-                	parent::setArray('artist', $artist, $params); $tmp = 
-                	$url = parent::createQueryURL($params, $this->_api_key);
+		function getTopFans($artist) {
+			$params = array();
+			parent::setArray('method', 'artist.gettopfans', $params); 
+			parent::setArray('artist', $artist, $params); $tmp = 
+			$url = parent::createQueryURL($params, $this->_api_key);
 			$tmp = parent::api_request($url);
-                        
-                        return $tmp;
+
+			return $tmp;
 		}
 		
 		function getTopTags($artist) {

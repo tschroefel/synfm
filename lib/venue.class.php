@@ -20,9 +20,9 @@
 		private $_password;
 		
 		function __construct($api_data) {
-                        $this->_api_key = $api_data['api_key'];
-                        $this->_username = $api_data['user'];
-                        $this->_password = $api_data['password'];
+			$this->_api_key = $api_data['api_key'];
+			$this->_username = $api_data['user'];
+			$this->_password = $api_data['password'];
 		}
 		
 		function getEvents($venue) {
