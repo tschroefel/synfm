@@ -24,41 +24,79 @@
 			$this->_username = $api_data['user'];
 			$this->_password = $api_data['password'];
 		}
-		
-		function getTopTracks($country, $location = false) {
+						
+		function getEvents($location = false, $lat = false, $long = false, $page = false) {
 			$params = array();
-			parent::setArray('method', 'geo.gettoptracks', $params);
-			parent::setArray('country', $country, $params);
+			parent::setArray('method', 'geo.getevents', $params);
 			parent::setArray('location', $location, $params);
+			parent::setArray('lat', $lat, $params);
+			parent::setArray('long', $long, $params);
+			parent::setArray('page', $page, $params);
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
+			
+			return $tmp;
+		}
+						
+		function getMetroArtistChart($country, $metro, $start = false, $end = false) {
+			$params = array();
+			parent::setArray('method', 'geo.getmetroartistchart', $params);
+			parent::setArray('country', $country, $params);
+			parent::setArray('metro', $metro, $params);
+			parent::setArray('start', $start. $params);
+			parent::setArray('end', $end, $params);
 			$url = parent::createQueryURL($params, $this->_api_key);
 			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
 		
-		function getTopArtists($country) {
+		function getMetroHypeArtistChart($country, $metro, $start = false, $end = false) {
 			$params = array();
-			parent::setArray('method', 'geo.gettopartists', $params);
+			parent::setArray('method', 'geo.getmetrohypeartistchart', $params);
 			parent::setArray('country', $country, $params);
+			parent::setArray('metro', $metro, $params);
+			parent::setArray('start', $start. $params);
+			parent::setArray('end', $end, $params);
 			$url = parent::createQueryURL($params, $this->_api_key);
 			$tmp = parent::api_request($url);
 			
-			return $tmp;			
-		}
-		
-		function getMetros($country = false) {
+			return $tmp;
+		}		
+				
+		function getMetroHypeTrackChart($country, $metro, $start = false, $end = false) {
 			$params = array();
-			parent::setArray('method', 'geo.getmetros', $params);
+			parent::setArray('method', 'geo.getmetrohypetrackchart', $params);
 			parent::setArray('country', $country, $params);
+			parent::setArray('metro', $metro, $params);
+			parent::setArray('start', $start. $params);
+			parent::setArray('end', $end, $params);
 			$url = parent::createQueryURL($params, $this->_api_key);
 			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
 		
-		function getMetroWeeklyChartlist() {
+		function getMetroTrackChart($country, $metro, $start = false, $end = false) {
 			$params = array();
-			parent::setArray('method', 'geo.getmetroweeklychartlist', $params);
+			parent::setArray('method', 'geo.getmetrotrackchart', $params);
+			parent::setArray('country', $country, $params);
+			parent::setArray('metro', $metro, $params);
+			parent::setArray('start', $start, $params);
+			parent::setArray('end', $end, $params);
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
+			
+			return $tmp;
+		}
+		
+		function getMetroUniqueArtistChart($country, $metro, $start = false, $end = false) {
+			$params = array();
+			parent::setArray('method', 'geo.getmetrouniqueartistchart', $params);
+			parent::setArray('country', $country, $params);
+			parent::setArray('metro', $metro, $params);
+			parent::setArray('start', $start, $params);
+			parent::setArray('end', $end, $params);
 			$url = parent::createQueryURL($params, $this->_api_key);
 			$tmp = parent::api_request($url);
 			
@@ -72,83 +110,49 @@
 			parent::setArray('metro', $metro, $params);
 			parent::setArray('start', $start, $params);
 			parent::setArray('end', $end, $params);
-			$url = createQueryURL($params, $this->_api_key);
-			$tmp = api_request($url);
-			
-			return $tmp;
-		}
-		
-		function getMetroUniqueArtistChart($country, $metro, $start = false, $end = false) {
-			$params = array();
-			parent::setArray('method', 'geo.getmetrouniqueartistchart', $params);
-			parent::setArray('country', $country, $params);
-			parent::setArray('metro', $metro, $params);
-			parent::setArray('start', $start, $params);
-			parent::setArray('end', $end, $params);
-			$url = parent::createQueryURL($params, $this->_api_key);
-			$tmp = api_request($url);
-			
-			return $tmp;
-		}
-		
-		function getMetroTrackChart($country, $metro, $start = false, $end = false) {
-			$params = array();
-			parent::setArray('method', 'geo.getmetrotrackchart', $params);
-			parent::setArray('country', $country, $params);
-			parent::setArray('metro', $metro, $params);
-			parent::setArray('start', $start. $params);
-			parent::setArray('end', $end, $params);
-			$url = parent::createQueryURL($params, $this->_api_key);
-			$tmp = parent::api_request($url);
-			
-			return $tmp;
-		}
-		
-		function getMetroTrackChart($country, $metro, $start = false, $end = false) {
-			$params = array();
-			parent::setArray('method', 'geo.getMetroHypeTrackChart', $params);
-			parent::setArray('country', $country, $params);
-			parent::setArray('metro', $metro, $params);
-			parent::setArray('start', $start. $params);
-			parent::setArray('end', $end, $params);
 			$url = parent::createQueryURL($params, $this->_api_key);
 			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
 
-		function getMetroTrackChart($country, $metro, $start = false, $end = false) {
+		function getMetroWeeklyChartlist($metro) {
 			$params = array();
-			parent::setArray('method', 'geo.getMetroHypeArtistChart', $params);
-			parent::setArray('country', $country, $params);
+			parent::setArray('method', 'geo.getmetroweeklychartlist', $params);
 			parent::setArray('metro', $metro, $params);
-			parent::setArray('start', $start. $params);
-			parent::setArray('end', $end, $params);
 			$url = parent::createQueryURL($params, $this->_api_key);
 			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
 		
-		function getMetroTrackChart($country, $metro, $start = false, $end = false) {
+		function getMetros($country = false) {
 			$params = array();
-			parent::setArray('method', 'geo.getMetroArtistChart', $params);
+			parent::setArray('method', 'geo.getmetros', $params);
 			parent::setArray('country', $country, $params);
-			parent::setArray('metro', $metro, $params);
-			parent::setArray('start', $start. $params);
-			parent::setArray('end', $end, $params);
 			$url = parent::createQueryURL($params, $this->_api_key);
 			$tmp = parent::api_request($url);
 			
 			return $tmp;
 		}
 		
-		function getEvents($location = false, $lat = false, $long = false, $page = false) {
+		function getTopArtists($country, $limit = false, $page = false) {
 			$params = array();
-			parent::setArray('method', 'geo.getevents', $params);
+			parent::setArray('method', 'geo.gettopartists', $params);
+			parent::setArray('country', $country, $params);
+			parent::setArray('limit', $limit, $params);
+			parent::setArray('page', $page, $params);
+			$url = parent::createQueryURL($params, $this->_api_key);
+			$tmp = parent::api_request($url);
+			
+			return $tmp;
+		}
+		
+		function getTopTracks($country, $location = false, $limit = false, $page = false) {
+			$params = array();
+			parent::setArray('method', 'geo.gettoptracks', $params);
 			parent::setArray('location', $location, $params);
-			parent::setArray('lat', $lat, $params);
-			parent::setArray('long', $long, $params);
+			parent::setArray('limit', $limit, $params);
 			parent::setArray('page', $page, $params);
 			$url = parent::createQueryURL($params, $this->_api_key);
 			$tmp = parent::api_request($url);
