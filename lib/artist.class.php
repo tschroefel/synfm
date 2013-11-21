@@ -7,8 +7,7 @@
 	/* Bi-Licensed under GPLv2 and 
 	/* Musicware License (send the authors a CD if you like this framework)
 	/*************************************************************************
-	/* our last.fm profiles:
-	/* crushmaster: http://www.lastfm.de/user/crushhamster (Vinyl preferred)
+	/* my last.fm profile:
 	/* nightraven: http://www.lastfm.de/user/Nightr4ven
 	/************************************************************************/
 
